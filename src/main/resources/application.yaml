@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: api-pedidos
+
+  datasource:
+    url: jdbc:postgresql://localhost:5435/bd-api-pedidos
+    username: coti
+    password: coti
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: coti
+    password: coti
+    virtual-host: /
+    queue: pedidos
+
+server:
+  port: 8084
